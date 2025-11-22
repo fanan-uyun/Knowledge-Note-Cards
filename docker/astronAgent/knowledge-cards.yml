@@ -1,0 +1,724 @@
+flowMeta:
+  name: 学习笔记&工作记录知识卡片
+  description: 将这些零散的『学习笔记/工作记录』组织成系统化的知识结构，更容易理解和记忆。
+  avatarIcon: https://oss-beijing-m8.openstorage.cn/SparkBotProd/icon/common/emojiitem_00_10@2x.png
+  avatarColor: '#FFEAD5'
+  advancedConfig: '{"prologue":{"enabled":true,"inputExample":["","",""]},"textToSpeech":{"enabled":true,"vcn_cn":"x5_lingxiaotang_flow","vcn_en":""}}'
+  category: 13
+  dslVersion: v1
+flowData:
+  nodes:
+  - id: node-start::d61b0f71-87ee-475e-93ba-f1607f0ce783
+    dragging: false
+    selected: false
+    width: 362
+    height: 90
+    position:
+      x: -426.01039587024593
+      y: -34.84030738872411
+    positionAbsolute:
+      x: -426.01039587024593
+      y: -34.84030738872411
+    type: custom
+    data:
+      allowInputReference: false
+      allowOutputReference: true
+      label: 开始
+      status: success
+      nodeMeta:
+        aliasName: 开始节点
+        nodeType: 基础节点
+      inputs: [
+        ]
+      outputs:
+      - id: 0918514b-72a8-4646-8dd9-ff4a8fc26d44
+        name: AGENT_USER_INPUT
+        nameErrMsg: ''
+        schema:
+          type: string
+          default: 用户本轮对话输入内容
+        required: true
+        deleteDisabled: true
+      nodeParam: {
+        }
+      icon: https://oss-beijing-m8.openstorage.cn/pro-bucket/sparkBot/common/workflow/icon/start-node-icon.png
+      description: 工作流的开启节点，用于定义流程调用所需的业务变量信息。
+      updatable: false
+  - id: node-end::cda617af-551e-462e-b3b8-3bb9a041bf88
+    dragging: false
+    selected: true
+    width: 362
+    height: 90
+    position:
+      x: -450.25298557929386
+      y: 401.8868158270201
+    positionAbsolute:
+      x: -450.25298557929386
+      y: 401.8868158270201
+    type: custom
+    data:
+      allowInputReference: true
+      allowOutputReference: false
+      label: 结束
+      references: [
+        ]
+      status: success
+      nodeMeta:
+        aliasName: 结束节点
+        nodeType: 基础节点
+      inputs:
+      - id: 82de2b42-a059-4c98-bffb-b6b4800fcac9
+        name: title
+        nameErrMsg: ''
+        schema:
+          type: string
+          value:
+            type: ref
+            content:
+              id: 720bc5c2-4f6d-4037-8f0e-22415a43d593
+              nodeId: spark-llm::9f67c1d4-b0ba-4a5d-8e5a-a530378a5ff6
+              name: title
+            contentErrMsg: ''
+        fileType: ''
+      - id: 44c3fb85-6a76-4f69-abd8-c6b2d2bc9493
+        name: explanation
+        nameErrMsg: ''
+        schema:
+          type: string
+          value:
+            type: ref
+            content:
+              id: 226c579b-2526-4cd2-b863-99447f9db6af
+              nodeId: spark-llm::9f67c1d4-b0ba-4a5d-8e5a-a530378a5ff6
+              name: explanation
+            contentErrMsg: ''
+        fileType: ''
+      - id: da60db38-211d-4396-8387-945ed8cb9912
+        name: knowledgeType
+        nameErrMsg: ''
+        schema:
+          type: string
+          value:
+            type: ref
+            content:
+              id: be5f360d-d629-4ea9-a500-57a6c901d1be
+              nodeId: spark-llm::9f67c1d4-b0ba-4a5d-8e5a-a530378a5ff6
+              name: knowledgeType
+            contentErrMsg: ''
+        fileType: ''
+      - id: 08122677-2087-4e55-9c1d-389c85ed20d8
+        name: difficulty
+        nameErrMsg: ''
+        schema:
+          type: string
+          value:
+            type: ref
+            content:
+              id: 470ac73a-98f1-420e-b4c5-42ee4c244418
+              nodeId: spark-llm::9f67c1d4-b0ba-4a5d-8e5a-a530378a5ff6
+              name: difficulty
+            contentErrMsg: ''
+        fileType: ''
+      - id: 94deb8c4-cd97-445d-86a6-b7b518187cf3
+        name: application
+        nameErrMsg: ''
+        schema:
+          type: string
+          value:
+            type: ref
+            content:
+              id: 63924648-b961-4e14-9a3f-de85e91c7acd
+              nodeId: spark-llm::9f67c1d4-b0ba-4a5d-8e5a-a530378a5ff6
+              name: application
+            contentErrMsg: ''
+        fileType: ''
+      - id: 39c91234-a804-4a98-8d91-e70caec96192
+        name: createTime
+        nameErrMsg: ''
+        schema:
+          type: string
+          value:
+            type: ref
+            content:
+              id: ce5d0bb4-da36-4123-aaa0-da40748c3b4e
+              nodeId: spark-llm::9f67c1d4-b0ba-4a5d-8e5a-a530378a5ff6
+              name: createTime
+            contentErrMsg: ''
+        fileType: ''
+      - id: 5f17c302-2469-4b4d-83a5-8873e27ad357
+        name: tags
+        nameErrMsg: ''
+        schema:
+          type: string
+          value:
+            type: ref
+            content:
+              id: fd9e83a8-64d7-45f3-ada7-d921ea794819
+              nodeId: spark-llm::9f67c1d4-b0ba-4a5d-8e5a-a530378a5ff6
+              name: tag
+            contentErrMsg: ''
+        fileType: ''
+      - id: 58bac129-2bda-4e19-8d37-bbc993c6479e
+        name: notes
+        nameErrMsg: ''
+        schema:
+          type: string
+          value:
+            type: ref
+            content:
+              id: 1a4daaf6-ed0e-455b-b431-f65f1c2a5150
+              nodeId: spark-llm::9f67c1d4-b0ba-4a5d-8e5a-a530378a5ff6
+              name: notes
+            contentErrMsg: ''
+        fileType: ''
+      outputs: [
+        ]
+      nodeParam:
+        template: |-
+          <!DOCTYPE html>
+          <html lang="zh-CN">
+          <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>{{title}}</title>
+            <style>
+              /* 基础重置与全局样式 */
+              * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family: "Inter", "Microsoft YaHei", "PingFang SC", sans-serif;
+              }
+              body {
+                background: linear-gradient(135deg, #f5f7fa 0%, #eaf6fa 100%);
+                padding: 2rem;
+                display: flex;
+                justify-content: center;
+                min-height: 100vh;
+              }
+              /* 卡片主体样式 */
+              .knowledge-card {
+                background: #ffffff;
+                border-radius: 20px;
+                box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(0, 0, 0, 0.04);
+                padding: 3rem;
+                width: 100%;
+                max-width: 750px;
+                position: relative;
+                overflow: hidden;
+                border: 1px solid #f0f4f8;
+              }
+              /* 顶部渐变装饰条 */
+              .card-decoration {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 4px;
+                background: linear-gradient(90deg, #4299e1, #38b2ac);
+              }
+              /* 难度标签（优化样式与位置） */
+              .difficulty-badge {
+                position: absolute;
+                top: 2.5rem;
+                right: 2.5rem;
+                padding: 0.5rem 1.2rem;
+                border-radius: 30px;
+                font-size: 0.85rem;
+                font-weight: 600;
+                text-transform: capitalize;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+                display: flex;
+                align-items: center;
+                gap: 0.4rem;
+              }
+              .difficulty-badge::before {
+                content: "★";
+                font-size: 0.7rem;
+              }
+              .beginner { background: #e6f7ff; color: #1890ff; border: 1px solid #bae6ff; }
+              .basic { background: #f0fff4; color: #52c41a; border: 1px solid #b7eb8f; }
+              .intermediate { background: #fff7e6; color: #faad14; border: 1px solid #ffd591; }
+              .advanced { background: #fff1f0; color: #ff4d4f; border: 1px solid #ffccc7; }
+              /* 标题区域（增强视觉权重） */
+              .card-title {
+                font-size: 2rem;
+                font-weight: 700;
+                color: #1d2129;
+                margin-bottom: 1.5rem;
+                line-height: 1.3;
+                position: relative;
+                padding-bottom: 1rem;
+              }
+              .card-title::after {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 60px;
+                height: 3px;
+                background: linear-gradient(90deg, #4299e1, transparent);
+                border-radius: 3px;
+              }
+              /* 核心解释区域（突出重点） */
+              .explanation-section {
+                margin-bottom: 2.5rem;
+                padding: 1.8rem;
+                background: #f8f9fa;
+                border-radius: 12px;
+                border-left: 4px solid #4299e1;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+              }
+              .section-heading {
+                font-size: 1.2rem;
+                font-weight: 600;
+                color: #2d3748;
+                margin-bottom: 1rem;
+                display: flex;
+                align-items: center;
+                gap: 0.6rem;
+              }
+              .section-heading i {
+                color: #4299e1;
+                font-size: 1.1rem;
+              }
+              .section-heading::after {
+                content: "";
+                flex: 1;
+                height: 1px;
+                background: linear-gradient(90deg, #dee2e6, transparent);
+                margin-left: 0.8rem;
+              }
+              .explanation-content {
+                font-size: 1.05rem;
+                color: #333740;
+                line-height: 1.9;
+                text-align: justify;
+                letter-spacing: 0.3px;
+              }
+              /* 基础信息栏（优化布局与图标） */
+              .info-bar {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 2rem;
+                margin-bottom: 2.5rem;
+                padding: 1.2rem 1.5rem;
+                background: #fafafa;
+                border-radius: 10px;
+                border: 1px solid #f0f0f0;
+              }
+              .info-item {
+                display: flex;
+                align-items: center;
+                gap: 0.7rem;
+                font-size: 0.95rem;
+                color: #4a5568;
+              }
+              .info-item i {
+                color: #4299e1;
+                font-size: 1.1rem;
+                width: 18px;
+                text-align: center;
+              }
+              .info-item span {
+                font-weight: 500;
+              }
+              .info-item span::first-letter {
+                text-transform: uppercase;
+              }
+              /* 内容模块通用样式（差异化设计） */
+              .content-section {
+                margin-bottom: 2.2rem;
+                position: relative;
+              }
+              .content-text {
+                font-size: 1rem;
+                color: #333740;
+                line-height: 1.8;
+                padding: 0.5rem 0;
+                letter-spacing: 0.2px;
+              }
+              /* 应用场景模块（独特标识） */
+              .application-section .section-heading i {
+                color: #38b2ac;
+              }
+              .application-section .content-text {
+                background: #f5fafe;
+                padding: 1.2rem;
+                border-radius: 8px;
+                border: 1px solid #e8f4f8;
+              }
+              /* 补充备注模块（独特标识） */
+              .notes-section .section-heading i {
+                color: #9f7aea;
+              }
+              .notes-section .content-text {
+                background: #fdf2f8;
+                padding: 1.2rem;
+                border-radius: 8px;
+                border: 1px solid #fef7fb;
+                font-style: italic;
+              }
+              /* 标签区域（优化交互感） */
+              .tags-section .section-heading i {
+                color: #ed8936;
+              }
+              .tags-container {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.9rem;
+                margin-top: 1rem;
+              }
+              .tag {
+                background: #f5f7fa;
+                color: #4e5969;
+                padding: 0.5rem 1.2rem;
+                border-radius: 25px;
+                font-size: 0.85rem;
+                border: 1px solid #e5e6eb;
+                transition: all 0.2s ease;
+                cursor: pointer;
+              }
+              .tag:hover {
+                background: #e8f4f8;
+                color: #4299e1;
+                border-color: #4299e1;
+                transform: translateY(-2px);
+                box-shadow: 0 2px 6px rgba(66, 153, 225, 0.1);
+              }
+              /* 底部时间（优化样式） */
+              .card-footer {
+                margin-top: 3rem;
+                padding-top: 1.8rem;
+                border-top: 1px dashed #e5e6eb;
+                font-size: 0.9rem;
+                color: #86909c;
+                text-align: right;
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+                gap: 0.6rem;
+              }
+              .card-footer i {
+                color: #cbd5e0;
+                font-size: 1rem;
+              }
+              /* 角落装饰元素 */
+              .card-corner {
+                position: absolute;
+                width: 60px;
+                height: 60px;
+                bottom: 0;
+                right: 0;
+                background: linear-gradient(135deg, transparent 50%, #f8f9fa 50%);
+                border-radius: 0 0 20px 0;
+                z-index: 0;
+              }
+              /* 响应式适配 */
+              @media (max-width: 768px) {
+                .knowledge-card {
+                  padding: 2rem;
+                }
+                .card-title {
+                  font-size: 1.7rem;
+                }
+                .explanation-section {
+                  padding: 1.5rem;
+                }
+                .info-bar {
+                  gap: 1.5rem;
+                  padding: 1rem;
+                }
+                .difficulty-badge {
+                  top: 1.5rem;
+                  right: 1.5rem;
+                  padding: 0.4rem 1rem;
+                }
+              }
+              @media (max-width: 480px) {
+                body {
+                  padding: 1rem;
+                }
+                .knowledge-card {
+                  padding: 1.5rem;
+                  border-radius: 16px;
+                }
+                .card-title {
+                  font-size: 1.5rem;
+                  margin-bottom: 1.2rem;
+                }
+                .section-heading {
+                  font-size: 1.1rem;
+                }
+                .info-bar {
+                  flex-direction: column;
+                  gap: 1rem;
+                  align-items: flex-start;
+                }
+              }
+              /* 图标引入 */
+              @import url("https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.0/css/all.min.css");
+            </style>
+          </head>
+          <body>
+            <div class="knowledge-card">
+              <!-- 顶部渐变装饰条 -->
+              <div class="card-decoration"></div>
+              <div class="difficulty-badge basic">{{difficulty}}</div>
+              <!-- 标题 -->
+              <h1 class="card-title">{{title}}</h1>
+              <!-- 核心概念解释 -->
+              <div class="explanation-section">
+                <h2 class="section-heading">
+                  <i class="fas fa-lightbulb"></i>核心解释
+                </h2>
+                <p class="explanation-content">{{explanation}}</p>
+              </div>
+              <!-- 基础信息栏 -->
+              <div class="info-bar">
+                <div class="info-item">
+                  <i class="fas fa-folder-open"></i>
+                  <span>知识类型：{{knowledgeType}}</span>
+                </div>
+                <div class="info-item">
+                  <i class="fas fa-calendar-check"></i>
+                  <span>创建时间：{{createTime}}</span>
+                </div>
+              </div>
+              <!-- 应用场景 -->
+              <div class="content-section application-section">
+                <h2 class="section-heading">
+                  <i class="fas fa-briefcase"></i>应用场景
+                </h2>
+                <p class="content-text">{{application}}</p>
+              </div>
+              <!-- 补充备注 -->
+              <div class="content-section notes-section">
+                <h2 class="section-heading">
+                  <i class="fas fa-sticky-note"></i>补充备注
+                </h2>
+                <p class="content-text">{{notes}}</p>
+              </div>
+              <div class="content-section tags-section">
+                <h2 class="section-heading">
+                  <i class="fas fa-tags"></i>标签
+                </h2>
+                <div class="tags-container">
+                  {{tags}}
+                </div>
+              </div>
+              <!-- 底部时间 -->
+              <div class="card-footer">
+                <i class="fas fa-clock"></i>
+                <span>最后更新：{{createTime}}</span>
+              </div>
+              <!-- 角落装饰 -->
+              <div class="card-corner"></div>
+            </div>
+          </body>
+          </html>
+        streamOutput: true
+        outputMode: 1
+        templateErrMsg: ''
+      icon: https://oss-beijing-m8.openstorage.cn/pro-bucket/sparkBot/common/workflow/icon/end-node-icon.png
+      description: 工作流的结束节点，用于输出工作流运行后的最终结果。
+      updatable: false
+  - id: spark-llm::9f67c1d4-b0ba-4a5d-8e5a-a530378a5ff6
+    dragging: false
+    selected: false
+    width: 362
+    height: 148
+    position:
+      x: -435.40493853453165
+      y: 162.45496209545854
+    positionAbsolute:
+      x: -435.40493853453165
+      y: 162.45496209545854
+    type: custom
+    data:
+      allowInputReference: true
+      allowOutputReference: true
+      label: 笔记重构
+      labelEdit: false
+      references: [
+        ]
+      status: success
+      nodeMeta:
+        nodeType: 基础节点
+        aliasName: 大模型
+      inputs:
+      - id: 3cd48c23-7402-4fff-888f-4aca228f660a
+        name: input
+        nameErrMsg: ''
+        schema:
+          type: string
+          value:
+            type: ref
+            content:
+              id: 0918514b-72a8-4646-8dd9-ff4a8fc26d44
+              nodeId: node-start::d61b0f71-87ee-475e-93ba-f1607f0ce783
+              name: AGENT_USER_INPUT
+            contentErrMsg: ''
+        fileType: ''
+      outputs:
+      - id: 720bc5c2-4f6d-4037-8f0e-22415a43d593
+        name: title
+        nameErrMsg: ''
+        schema:
+          type: string
+          default: ''
+      - id: 226c579b-2526-4cd2-b863-99447f9db6af
+        name: explanation
+        nameErrMsg: ''
+        schema:
+          type: string
+          default: ''
+        required: false
+      - id: be5f360d-d629-4ea9-a500-57a6c901d1be
+        name: knowledgeType
+        nameErrMsg: ''
+        schema:
+          type: string
+          default: ''
+        required: false
+      - id: 470ac73a-98f1-420e-b4c5-42ee4c244418
+        name: difficulty
+        nameErrMsg: ''
+        schema:
+          type: string
+          default: ''
+        required: false
+      - id: 63924648-b961-4e14-9a3f-de85e91c7acd
+        name: application
+        nameErrMsg: ''
+        schema:
+          type: string
+          default: ''
+        required: false
+      - id: ce5d0bb4-da36-4123-aaa0-da40748c3b4e
+        name: createTime
+        nameErrMsg: ''
+        schema:
+          type: string
+          default: ''
+        required: false
+      - id: fd9e83a8-64d7-45f3-ada7-d921ea794819
+        name: tag
+        nameErrMsg: ''
+        schema:
+          type: string
+          default: ''
+        required: false
+      - id: 1a4daaf6-ed0e-455b-b431-f65f1c2a5150
+        name: notes
+        nameErrMsg: ''
+        schema:
+          type: string
+          default: ''
+        required: false
+      nodeParam:
+        maxTokens: 2048
+        topK: 4
+        auditing: default
+        template: |-
+          # 角色
+          你是一个学习科学专家，擅长将零散的信息组织成系统化的知识结构。
+
+
+          # 任务
+          > “请根据提供的学习笔记，重新组织梳理，生成一个结构化知识卡片，使其更容易理解和记忆，输出格式为JSON，包含以下字段：
+          >
+          > * `title`：核心主题
+          > * `explanation`：用清晰易懂的方式解释核心概念
+          > * `knowledgeType `：知识类型（枚举：概念定义 / 方法技巧 / 原理推导 / 案例分析 / 公式定理 / 其他）
+          > * `difficulty `：难度级别（枚举：入门 / 基础 / 进阶 / 高级）
+          > * `application `：应用场景（知识的实际用途）
+          > * `createTime `：创建时间（ISO 格式，如 "2025-11-22T10:30:00"）
+          > * `tag`：标签（用于分类检索）
+          > * `notes `：补充备注（个人理解 / 拓展思考）
+          >
+          > 请仅输出 JSON，不要添加任何额外说明或文本。”
+          ---
+          ### ✅ 示例输入：
+          ```text
+          Python 推导式是一种独特的数据处理方式，可以从一个数据序列构建另一个新的数据序列的结构体。
+          也可以说推导式是从一个或多个迭代器快速简洁的创建数据结构的一种办法，它可以将循环和条件判断结合，从而可以避免语法冗长的代码。
+          列表推导式基本格式: [表达式 for 变量 in 列表] 或者 [表达式 for 变量 in 列表 if 条件]
+          ```
+          ### ✅ 示例输出（JSON）：
+          ```json
+          {
+          "title": "Python列表推导式语法与应用",
+          "explanation": "一种独特的数据处理方式，可以从一个数据序列构建另一个新的数据序列的结构体",
+          "knowledgeType": "方法技巧",
+          "difficulty": "基础",
+          "application": "数据处理、爬虫结果清洗、快速生成测试数据",
+          "createTime": "2025-11-22T14:25:30",
+          "tag": "Python",
+          "notes": "可以嵌套使用，比如二维列表转一维：[y for x in matrix for y in x]"
+          }
+          ```
+
+          输入：{{input}}
+        respFormat: 2
+        appId: 680ab54f
+        uid: d3aec195-dafb-40fc-b60b-028422afe2df
+        enableChatHistoryV2:
+          isEnabled: false
+          rounds: 1
+        templateErrMsg: ''
+        llmId: 593066024
+        domain: deepseek-chat
+        serviceId: deepseek-chat
+        url: https://api.deepseek.com/chat/completions
+        modelId: 1
+        isThink: false
+        multiMode: false
+        modelName: DeepSeek官方大模型服务
+        modelEnabled: true
+        llmIdErrMsg: ''
+        source: openai
+        extraParams:
+          temperature: 1
+        systemTemplate: |2+
+
+        setAnswerContentErrMsg: ''
+        exceptionHandlingEdge: fail_one_of::aaca69bc-c234-445e-a704-17f401e26d25
+        handlingEdge: normal_one_of::70b00eaf-9b20-46d7-9a6f-129c72f3dc94
+      retryConfig:
+        shouldRetry: false
+        errorStrategy: 1
+        customOutput: |-
+          {
+            "title": "",
+            "explanation": "",
+            "knowledgeType": "",
+            "difficulty": "",
+            "application": "",
+            "createTime": "",
+            "tag": "",
+            "notes": ""
+          }
+      icon: https://oss-beijing-m8.openstorage.cn/pro-bucket/sparkBot/common/workflow/icon/largeModelIcon.png
+      description: 根据输入的提示词，调用选定的大模型，对提示词作出回答
+      updatable: false
+  edges:
+  - source: node-start::d61b0f71-87ee-475e-93ba-f1607f0ce783
+    target: spark-llm::9f67c1d4-b0ba-4a5d-8e5a-a530378a5ff6
+    type: customEdge
+    id: reactflow__edge-node-start::d61b0f71-87ee-475e-93ba-f1607f0ce783-spark-llm::9f67c1d4-b0ba-4a5d-8e5a-a530378a5ff6
+    markerEnd:
+      type: arrow
+      color: '#6356EA'
+    data:
+      edgeType: curve
+  - source: spark-llm::9f67c1d4-b0ba-4a5d-8e5a-a530378a5ff6
+    sourceHandle: normal_one_of::70b00eaf-9b20-46d7-9a6f-129c72f3dc94
+    target: node-end::cda617af-551e-462e-b3b8-3bb9a041bf88
+    type: customEdge
+    id: reactflow__edge-spark-llm::9f67c1d4-b0ba-4a5d-8e5a-a530378a5ff6normal_one_of::70b00eaf-9b20-46d7-9a6f-129c72f3dc94-node-end::cda617af-551e-462e-b3b8-3bb9a041bf88
+    markerEnd:
+      type: arrow
+      color: '#6356EA'
+    data:
+      edgeType: curve
